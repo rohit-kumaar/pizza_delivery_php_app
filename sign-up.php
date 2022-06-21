@@ -84,7 +84,7 @@
                       <div class="grid grid-cols-6 gap-6">
                         <div class="col-span-6 sm:col-span-3">
                           <label
-                            for="first-name"
+                            for="firstName"
                             class="block text-sm font-medium text-gray-700"
                             >First name
                             <span class="text-red-700 font-bold text-lg"
@@ -93,8 +93,8 @@
                           >
                           <input
                             type="text"
-                            name="first-name"
-                            id="first-name"
+                            name="firstName"
+                            id="firstName"
                             autocomplete="given-name"
                             class="sign-up-input"
                           />
@@ -102,7 +102,7 @@
 
                         <div class="col-span-6 sm:col-span-3">
                           <label
-                            for="last-name"
+                            for="lastName"
                             class="block text-sm font-medium text-gray-700"
                             >Last name<span
                               class="text-red-700 font-bold text-lg"
@@ -111,8 +111,8 @@
                           >
                           <input
                             type="text"
-                            name="last-name"
-                            id="last-name"
+                            name="lastName"
+                            id="lastName"
                             autocomplete="family-name"
                             class="sign-up-input"
                           />
@@ -120,7 +120,7 @@
 
                         <div class="col-span-6 sm:col-span-3">
                           <label
-                            for="email-address"
+                            for="email"
                             class="block text-sm font-medium text-gray-700"
                             >Email address<span
                               class="text-red-700 font-bold text-lg"
@@ -129,8 +129,8 @@
                           >
                           <input
                             type="text"
-                            name="email-address"
-                            id="email-address"
+                            name="email"
+                            id="email"
                             autocomplete="email"
                             class="sign-up-input"
                           />
@@ -173,7 +173,7 @@
 
                         <div class="col-span-6">
                           <label
-                            for="street-address"
+                            for="street"
                             class="block text-sm font-medium text-gray-700"
                             >Street address<span
                               class="text-red-700 font-bold text-lg"
@@ -182,9 +182,9 @@
                           >
                           <input
                             type="text"
-                            name="street-address"
-                            id="street-address"
-                            autocomplete="street-address"
+                            name="street"
+                            id="street"
+                            autocomplete="street"
                             class="sign-up-input"
                           />
                         </div>
@@ -208,7 +208,7 @@
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                           <label
-                            for="region"
+                            for="state"
                             class="block text-sm font-medium text-gray-700"
                             >State / Province<span
                               class="text-red-700 font-bold text-lg"
@@ -216,9 +216,9 @@
                             ></label
                           >
                           <input
-                            type="text"
-                            name="region"
-                            id="region"
+                            type="text"state
+                            name="state"
+                            id="state"
                             autocomplete="address-level1"
                             class="sign-up-input"
                           />
@@ -226,7 +226,7 @@
 
                         <div class="col-span-6 sm:col-span-3 lg:col-span-2">
                           <label
-                            for="postal-code"
+                            for="zip"
                             class="block text-sm font-medium text-gray-700"
                             >ZIP / Postal code<span
                               class="text-red-700 font-bold text-lg"
@@ -235,9 +235,9 @@
                           >
                           <input
                             type="text"
-                            name="postal-code"
-                            id="postal-code"
-                            autocomplete="postal-code"
+                            name="zip"
+                            id="zip"
+                            autocomplete="zip"
                             class="sign-up-input"
                           />
                         </div>
