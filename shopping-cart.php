@@ -51,7 +51,7 @@
         <div
           class="bg-slate-100 flex items-center justify-between h-[15vh] px-4"
         >
-          <a href="index.html">
+          <a href="index.php">
             <img
               class="w-16 cursor-pointer"
               loading="lazy"
@@ -81,7 +81,7 @@
               </li>
               <li>
                 <a
-                  href="index.html"
+                  href="index.php"
                   class="btn bg-white hover:bg-slate-800 hover:text-white transition-colors duration-700 text-black border border-slate-800 inline-block mr-0.5"
                   >Logout
                 </a>
@@ -124,7 +124,7 @@
           <span class="text-2xl font-bold">$18.3</span>
           <div></div>
           <div class="flex sm:justify-end">
-            <a href="order-paid.html" class="btn justify-end">Checkout</a>
+            <a href="order-paid.php" class="btn justify-end">Checkout</a>
           </div>
         </div>
       </div>

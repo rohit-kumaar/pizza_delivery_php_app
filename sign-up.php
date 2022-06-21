@@ -42,7 +42,7 @@
         <div
           class="bg-slate-100 flex items-center justify-between h-[15vh] px-4"
         >
-          <a href="index.html">
+          <a href="index.php">
             <img
               class="w-16 cursor-pointer"
               loading="lazy"
@@ -53,7 +53,7 @@
           </a>
           <div>
             <a
-              href="login.html"
+              href="login.php"
               class="btn bg-white hover:bg-slate-800 hover:text-white transition-colors duration-700 text-black border border-slate-800 inline-block ml-0.5"
               >Login
             </a>

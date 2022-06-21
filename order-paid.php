@@ -81,7 +81,7 @@
               </li>
               <li>
                 <a
-                  href="index.html"
+                  href="index.php"
                   class="btn bg-white hover:bg-slate-800 hover:text-white transition-colors duration-700 text-black border border-slate-800 inline-block mr-0.5"
                   >Logout
                 </a>
@@ -108,7 +108,7 @@
           </div>
 
           <div>
-            <a href="menu-list.html" class="btn justify-end"
+            <a href="menu-list.php" class="btn justify-end"
               >Go an order some more</a
             >
           </div>

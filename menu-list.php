@@ -51,7 +51,7 @@
         <div
           class="bg-slate-100 flex items-center justify-between h-[15vh] px-4"
         >
-          <a href="index.html">
+          <a href="index.php">
             <img
               class="w-16 cursor-pointer"
               loading="lazy"
@@ -69,7 +69,7 @@
                 <a href="#" class="text-slate-500 font-medium">Menu</a>
               </li>
               <li>
-                <a href="shopping-cart.html" class="text-slate-500 font-medium">
+                <a href="shopping-cart.php" class="text-slate-500 font-medium">
                   Cart
                   <span class="btn py-0 px-1.5 text-xs font-medium">
                     6

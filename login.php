@@ -42,7 +42,7 @@
         <div
           class="bg-slate-100 flex items-center justify-between h-[15vh] px-4"
         >
-          <a href="index.html">
+          <a href="index.php">
             <img
               class="w-16 cursor-pointer"
               loading="lazy"
@@ -54,7 +54,7 @@
 
           <div>
             <a
-              href="sign-up.html"
+              href="sign-up.php"
               class="btn hover:bg-slate-800 hover:text-white transition-colors duration-700 bg-white text-black border border-slate-800 inline-block mr-0.5"
               >Sign up
             </a>
@@ -87,7 +87,7 @@
           placeholder="Password"
         />
       </div>
-      <a href="menu-list.html" class="btn inline-block">Login</a>
+      <a href="menu-list.php" class="btn inline-block">Login</a>
     </form>
   </body>
 </html>
