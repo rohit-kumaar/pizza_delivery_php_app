@@ -13,35 +13,17 @@
         } 
         else
         {
-            if (is_dir("regdInfo/$email"))
+            $sel = mysqli_query($connection, "select email, password from regd where email = '$email' and password = '$password'");
+            $arr = mysqli_fetch_assoc($sel);
+            if($email === $arr['email'] && $password === $arr['password'])
             {
-                  $fileOpen = fopen("regdInfo/$email/info.txt", "r");
-                  session_start(); // session start if you get first name
-                  $_SESSION['firstName'] = fgets($fileOpen); // in info folder 1st line username
-                  fgets($fileOpen);
-                  fgets($fileOpen);
-                  $getInfoPassword =  trim(fgets($fileOpen));
-                    if ($password == $getInfoPassword)
-                    {
-                      session_start();
-                      $_SESSION['email'] = $email;
-                      header("location:account.php");
-                    }
-                    else
-                    {
-                        $error = "*";
-                    }
-                    
+                  header("location:menu-list.php");
             }
             else
             {
                 $error = "*";
             }
-            
         }
-        
-
-    
    }
    else
    {
