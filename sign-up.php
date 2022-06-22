@@ -2,7 +2,6 @@
    include("php/sign-up.php");
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,6 +40,7 @@
     <!-- Customs JS  -->
     <script src="src/js/index.js" defer></script>
   </head>
+
   <body>
     <header class="mb-7">
       <div class="container mx-auto px-8">
@@ -81,9 +81,9 @@
                     Use a permanent address where you can receive mail.
                   </p>
                 </div>
-              </div> 
+              </div>
               <div class="mt-5 md:mt-0 md:col-span-2">
-                <form  method="post" enctype="multipart/form-data">
+                <form method="post" enctype="multipart/form-data">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                       <div class="grid grid-cols-6 gap-6">
@@ -95,12 +95,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
-                            ?>   
-                            </label
-                          >
+                            ?>
+                          </label>
                           <input
                             type="text"
                             name="firstName"
@@ -118,11 +119,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
-                            ?></label
-                          >
+                            ?>
+                          </label>
                           <input
                             type="text"
                             name="lastName"
@@ -140,12 +143,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="text"
                             name="email"
@@ -163,12 +167,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="password"
                             name="password"
@@ -203,12 +208,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="text"
                             name="street"
@@ -226,12 +232,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="text"
                             name="city"
@@ -249,12 +256,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="text"
                             state
@@ -273,12 +281,13 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
-                            </label
-                          >
+                          </label>
                           <input
                             type="text"
                             name="zip"
@@ -329,8 +338,10 @@
                             <?php
                                 if (isset($error)) {
                                       ?>
-                                      <span class="text-red-700 font-bold text-lg"><?= $error; ?></span>
-                                      <?php
+                            <span class="text-red-700 font-bold text-lg">
+                              <?= $error; ?>
+                            </span>
+                            <?php
                                 }   
                             ?>
                           </label>
@@ -375,11 +386,7 @@
                         </div>
                       </div>
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
-                        <button
-                          type="submit"
-                          name="submit"
-                          class="btn"
-                        >
+                        <button type="submit" name="submit" class="btn">
                           Save
                         </button>
                       </div>
@@ -394,4 +401,3 @@
     </main>
   </body>
 </html>
-
