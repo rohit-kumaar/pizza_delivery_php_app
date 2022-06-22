@@ -83,7 +83,7 @@
                 </div>
               </div> 
               <div class="mt-5 md:mt-0 md:col-span-2">
-                <form method="post" enctype="multipart/form-data">
+                <form  method="post" enctype="multipart/form-data">
                   <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
                       <div class="grid grid-cols-6 gap-6">
@@ -377,7 +377,7 @@
                       <div class="px-4 py-3 bg-gray-50 text-right sm:px-6">
                         <button
                           type="submit"
-                          name="submit-personal-info"
+                          name="submit"
                           class="btn"
                         >
                           Save

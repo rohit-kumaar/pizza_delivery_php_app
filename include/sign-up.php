@@ -1,6 +1,8 @@
 <?php 
+include("include/db.php") ;
 
-if (isset($_POST['submit-personal-info'])) {
+if (isset($_POST['submit']))
+{
           $firstName = $_POST['firstName'];
           $lastName = $_POST['lastName'];
           $email = $_POST['email'];
@@ -29,30 +31,37 @@ if (isset($_POST['submit-personal-info'])) {
                          
           $info = "$firstName\n$lastName\n$email\n$password\n$street\n$city\n$state\n$zip";               
 
-    if ($isEmpty) {
+    if ($isEmpty)
+    {
       $error = "*";
-    } else {
-        if ($isExtension) {
-          if (is_dir("regdInfo/$email")) {
+    }
+    else
+    {
+        if ($isExtension)
+        {
+          if (is_dir("regdInfo/$email"))
+          {
             $error = "*";
-          }else {
-            mkdir("regdInfo/$email");
-              if(move_uploaded_file($temporary,"regdInfo/$email/$email".".jpg")){
-                  file_put_contents("regdInfo/$email/info.txt", $info);
-                  header("location:index.php");
-              }else {
+          }
+          else
+          {
+              if(mysqli_query($connection, "insert into regd(firstName,lastName,email, password,street,city,state,zip,image) values ('$firstName','$lastName','$email', '$password','$street','$city','$state',$zip,'$email.jpg')"))
+              {
+                  if(move_uploaded_file($temporary,"regdInfo/$email.jpg"))
+                  {
+                    header("location:index.php");
+                  }
+              }
+              else
+              {
                 $error = "*";
               }
           }
-        }else {
+        }
+        else
+        {
            $error = "*";
         }  
     }
-                     
-          
-          
-
 }
-
-
 ?>
