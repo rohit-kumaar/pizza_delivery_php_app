@@ -1,3 +1,8 @@
+<?php
+     include("database/db.php");
+     include("php/login.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -63,7 +68,7 @@
       </div>
     </header>
 
-    <form class="container mx-auto px-8">
+    <form class="container mx-auto px-8" method="post">
       <h1 class="text-4xl font-medium mb-4">Login</h1>
       <div>
         <input
@@ -87,7 +92,12 @@
           placeholder="Password"
         />
       </div>
-      <a href="menu-list.php" class="btn inline-block">Login</a>
+      <input
+        class="btn inline-block"
+        name="login"
+        type="submit"
+        value="Login"
+      />
     </form>
   </body>
 </html>
