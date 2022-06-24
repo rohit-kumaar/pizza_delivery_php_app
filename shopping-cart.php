@@ -1,5 +1,10 @@
 <?php
     include("database/db.php");
+
+    if(isset($_GET['delete'])){
+      mysqli_query($conn, "DELETE FROM `add-to-cart`");
+     
+   }
 ?>
 
 <!DOCTYPE html>
@@ -34,7 +39,7 @@
 </head>
 
 <body>
-  <header class="z-0 fixed top-0 w-full">
+  <header class="z-0 fixed top-0 w-full" style="z-index: 2">
     <div class="container mx-auto px-8">
       <div class="bg-slate-100 flex items-center justify-between h-[15vh] px-4">
         <a href="index.html">
@@ -84,24 +89,32 @@
       <h1 class="text-4xl font-medium mb-4 border-b-2 pb-4">Shopping Cart</h1>
 
       <?php
-        $select_products = mysqli_query($connection, "SELECT * FROM `add-to-cart`");
-        if(mysqli_num_rows($select_products) > 0)
+        $select_cart = mysqli_query($connection, "SELECT * FROM `add-to-cart`");
+        if(mysqli_num_rows($select_cart) > 0)
         {
-           while($row = mysqli_fetch_assoc($select_products))
+           while($row = mysqli_fetch_assoc($select_cart))
         {
       ?>            
       
-      <div class="border-b-2 pb-4 grid md:grid-cols-5 gap-2 md:gap-0" style="margin-bottom: 16px">
+      <div class="border-b-2 pb-4 grid md:grid-cols-5 gap-2 md:gap-0" style="margin-bottom: 16px" style="z-index: -1">
         <img class="w-1/6" src="productInfo/<?php echo $row['image']; ?>" alt="pizza" />
         <h2 class="font-bold text-xl"><?php echo $row['name']; ?></h2>
         <span class="font-bold flex items-center">$<?php echo $row['price']; ?></span>
 
-        <input type="number" class="relative block w-full px-3 sm:text-sm py-3 border border-gray-300"
-          placeholder="Enter Quantity">
-        <div class="flex sm:justify-end">
-          <button class="btn justify-end">Delete</button>
-        </div>
+        <input type="number" class="relative block w-full px-3 sm:text-sm py-3 border border-gray-300" placeholder="Enter Quantity" min="1" value="<?php echo $row['quantity']?>">
+          <div class="flex sm:justify-end">
+            <button class="btn justify-end">Delete</button>
+            
+            <?php
+                 $subtotal = number_format($row['price'] * $row['quantity']);
+                 $total += $subtotal;    
+            ?>
+          </div>
+
+          
       </div>
+      
+      
       <?php
           };    
         }
@@ -110,16 +123,19 @@
          echo "<div>No product added</div>";
         };
       ?>          
+      
+      
 
       <div class="py-4 grid md:grid-cols-5 gap-2 md:gap-0">
-        <h2 class="text-2xl font-medium">Total</h2>
-        <div></div>
-        <span class="text-2xl font-bold">$18.3</span>
-        <div></div>
-        <div class="flex sm:justify-end">
-          <a href="order-paid.html" class="btn justify-end">Checkout</a>
-        </div>
+            <h2 class="text-2xl font-medium">Total</h2>
+            <div></div>
+            <span class="text-2xl font-bold">$<?php echo $total; ?></span>
+            <div></div>
+            <div class="flex sm:justify-end">
+                 <a href="order-paid.html" class="btn justify-end">Checkout</a>
+            </div>
       </div>
+
     </div>
   </main>
 </body>
