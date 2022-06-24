@@ -1,3 +1,7 @@
+<?php
+    include("database/db.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -42,14 +46,20 @@
           <ul
             class="hamburger-menu active sm:translate-x-0 bg-slate-200/40 backdrop-blur-xl sm:bg-transparent fixed top-0 right-0 bottom-0 left-20 sm:static sm:left-0 p-12 sm:p-0 flex flex-col sm:flex-row sm:items-center sm:justify-center gap-6 z-10 transition-transform duration-700 sm:transition-none">
             <li>
-              <a href="#" class="text-slate-500 font-medium">Menu</a>
+              <a href="menu-list.php" class="text-slate-500 font-medium">Menu</a>
             </li>
             <li>
               <a href="#" class="text-slate-500 font-medium">
-                Cart
-                <span class="btn py-0 px-1.5 text-xs font-medium">
-                  6
-                </span></a>
+              <span> Cart </span>
+              <?php
+              $select_rows = mysqli_query($connection, "SELECT * FROM `add-to-cart`") or('query failed');
+              $row_count = mysqli_num_rows($select_rows);
+                                
+              ?>
+              <span class="btn py-0 px-1.5 text-xs font-medium">
+                      <?php echo $row_count; ?>
+              </span>
+              </a>
             </li>
             <li>
               <a href="#" class="text-slate-500 font-medium">Profile</a>
@@ -73,10 +83,18 @@
     <div class="container mx-auto px-8">
       <h1 class="text-4xl font-medium mb-4 border-b-2 pb-4">Shopping Cart</h1>
 
-      <div class="border-b-2 pb-4 grid md:grid-cols-5 gap-2 md:gap-0">
-        <img class="w-1/6" src="src/images/pizza.jpg" alt="pizza" />
-        <h2 class="font-bold text-xl">Cheeseburger</h2>
-        <span class="font-bold flex items-center">$18.3</span>
+      <?php
+        $select_products = mysqli_query($connection, "SELECT * FROM `add-to-cart`");
+        if(mysqli_num_rows($select_products) > 0)
+        {
+           while($row = mysqli_fetch_assoc($select_products))
+        {
+      ?>            
+      
+      <div class="border-b-2 pb-4 grid md:grid-cols-5 gap-2 md:gap-0" style="margin-bottom: 16px">
+        <img class="w-1/6" src="productInfo/<?php echo $row['image']; ?>" alt="pizza" />
+        <h2 class="font-bold text-xl"><?php echo $row['name']; ?></h2>
+        <span class="font-bold flex items-center">$<?php echo $row['price']; ?></span>
 
         <input type="number" class="relative block w-full px-3 sm:text-sm py-3 border border-gray-300"
           placeholder="Enter Quantity">
@@ -84,6 +102,14 @@
           <button class="btn justify-end">Delete</button>
         </div>
       </div>
+      <?php
+          };    
+        }
+        else
+        {
+         echo "<div>No product added</div>";
+        };
+      ?>          
 
       <div class="py-4 grid md:grid-cols-5 gap-2 md:gap-0">
         <h2 class="text-2xl font-medium">Total</h2>

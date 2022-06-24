@@ -116,51 +116,6 @@
                 ?>
 
                
-
-                <!-- <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Don Bacon" />
-                    <h2 class="font-bold text-xl">Don Bacon</h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$24.3</span>
-                    </div>
-                </div>
-
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Carne" />
-                    <h2 class="font-bold text-xl">Carne</h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$26.3</span>
-                    </div>
-                </div>
-
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Julienne" />
-                    <h2 class="font-bold text-xl">Julienne</h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$12.5</span>
-                    </div>
-                </div>
-
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza 5 Cheese" />
-                    <h2 class="font-bold text-xl">5 Cheese</h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$14.35</span>
-                    </div>
-                </div>
-
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Cipollo" />
-                    <h2 class="font-bold text-xl">Cipollo</h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$10</span>
-                    </div>
-                </div> -->
             </div>
         </div>
     </main>
