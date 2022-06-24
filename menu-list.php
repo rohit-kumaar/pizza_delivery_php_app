@@ -1,5 +1,6 @@
 <?php
     include("database/db.php");
+    include("php/menu-list.php");
 ?>
 
 <!DOCTYPE html>
@@ -86,16 +87,19 @@
                        while($row = mysqli_fetch_assoc($select_products))
                     {
                 ?>
-
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="productInfo/<?php echo $row['image']; ?>" alt="pizza" title="Pizza Cheeseburger" />
-                    <h2 class="font-bold text-xl"><?php echo $row['name']; ?></h2>
-                    <div class="mt-3 flex items-center gap-4">
-                        <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$<?php echo $row['price']; ?></span>
+                <form method="post" >
+                    <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
+                        <img  loading="lazy" src="productInfo/<?php echo $row['image']; ?>" alt="pizza" title="Pizza Cheeseburger" />
+                        <h2  class="font-bold text-xl"><?php echo $row['name']; ?></h2>
+                        <div class="mt-3 flex items-center gap-4">
+                        <input type="hidden" name="name" value="<?php echo $row['name']; ?>">
+                        <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
+                        <input type="hidden" name="image" value="<?php echo $row['image']; ?>">
+                        <input type="submit" name="add-to-cart" class="btn" value="Add to Cart">
+                        <span  class="font-bold">$<?php echo $row['price']; ?></span>
+                        </div>
                     </div>
-                </div>
-
+                </form>
                 <?php
                     };    
                   }
