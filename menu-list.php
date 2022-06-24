@@ -66,7 +66,7 @@
                             <a href="#" class="text-slate-500 font-medium">Profile</a>
                         </li>
                         <li>
-                            <a href="#"
+                            <a href="index.php"
                                 class="btn bg-white hover:bg-slate-800 hover:text-white transition-colors duration-700 text-black border border-slate-800 inline-block mr-0.5">Logout
                             </a>
                         </li>
