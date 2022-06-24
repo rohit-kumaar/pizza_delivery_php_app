@@ -1,3 +1,7 @@
+<?php
+    include("database/db.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,16 +78,36 @@
             <h1 class="text-4xl font-medium mb-4">Menu</h1>
 
             <div class="cards grid sm:grid-cols-2 md:grid-cols-3 gap-x-5 gap-y-3">
+
+                <?php
+                    $select_products = mysqli_query($connection, "SELECT * FROM `prooducts`");
+                    if(mysqli_num_rows($select_products) > 0)
+                    {
+                       while($row = mysqli_fetch_assoc($select_products))
+                    {
+                ?>
+
                 <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
-                    <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Cheeseburger" />
-                    <h2 class="font-bold text-xl">Cheeseburger</h2>
+                    <img loading="lazy" src="productInfo/<?php echo $row['image']; ?>" alt="pizza" title="Pizza Cheeseburger" />
+                    <h2 class="font-bold text-xl"><?php echo $row['name']; ?></h2>
                     <div class="mt-3 flex items-center gap-4">
                         <button class="btn">Add to Cart</button>
-                        <span class="font-bold">$18.3</span>
+                        <span class="font-bold">$<?php echo $row['price']; ?></span>
                     </div>
                 </div>
 
-                <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
+                <?php
+                    };    
+                  }
+                  else
+                  {
+                   echo "<div>No product added</div>";
+                  };
+                ?>
+
+               
+
+                <!-- <div class="card flex flex-col items-center p-5 border border-slate-300 rounded">
                     <img loading="lazy" src="src/images/pizza.jpg" alt="pizza" title="Pizza Don Bacon" />
                     <h2 class="font-bold text-xl">Don Bacon</h2>
                     <div class="mt-3 flex items-center gap-4">
@@ -126,7 +150,7 @@
                         <button class="btn">Add to Cart</button>
                         <span class="font-bold">$10</span>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </main>

@@ -3,17 +3,17 @@ include("database/db.php");
 
 if (isset($_POST['submit']))
 {
-          $firstName = $_POST['firstName'];
-          $lastName = $_POST['lastName'];
-          $email = $_POST['email'];
-          $password = $_POST['password'];
-          $street = $_POST['street'];
-          $city = $_POST['city'];
-          $state = $_POST['state'];
-          $zip = $_POST['zip'];
-          $temporary=$_FILES['imageUpload']['tmp_name'];
-          $imageUpload=$_FILES['imageUpload']['name'];
-          $extension=pathinfo($imageUpload,PATHINFO_EXTENSION);
+          $firstName   = $_POST['firstName'];
+          $lastName    = $_POST['lastName'];
+          $email       = $_POST['email'];
+          $password    = $_POST['password'];
+          $street      = $_POST['street'];
+          $city        = $_POST['city'];
+          $state       = $_POST['state'];
+          $zip         = $_POST['zip'];
+          $temporary   = $_FILES['imageUpload']['tmp_name'];
+          $imageUpload = $_FILES['imageUpload']['name'];
+          $extension   = pathinfo($imageUpload,PATHINFO_EXTENSION);
 
           $isEmpty = empty($firstName) ||
                      empty($lastName)  ||
