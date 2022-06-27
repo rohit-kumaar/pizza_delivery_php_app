@@ -134,7 +134,7 @@
             <span class="text-2xl font-bold">$<?php echo $total; ?></span>
             <div></div>
             <div class="flex sm:justify-end">
-                 <a href="order-paid.php" class="btn justify-end">Checkout</a>
+                 <a href="checkout.php" class="btn justify-end">Checkout</a>
             </div>
       </div>
 
