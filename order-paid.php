@@ -1,3 +1,8 @@
+<?php
+    include("database/db.php");
+    include("php/menu-list.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,11 +50,17 @@
                             <a href="#" class="text-slate-500 font-medium">Menu</a>
                         </li>
                         <li>
-                            <a href="#" class="text-slate-500 font-medium">
-                                Cart
+                            <a href="shopping-cart.php" class="text-slate-500 font-medium">
+                            <span> Cart </span>
+                                <?php
+                                $select_rows = mysqli_query($connection, "SELECT * FROM `add-to-cart`") or die('query failed');
+                                $row_count = mysqli_num_rows($select_rows);
+                                
+                                ?>
                                 <span class="btn py-0 px-1.5 text-xs font-medium">
-                                    6
-                                </span></a>
+                                        <?php echo $row_count; ?>
+                                </span>
+                            </a>
                         </li>
                         <li>
                             <a href="#" class="text-slate-500 font-medium">Profile</a>

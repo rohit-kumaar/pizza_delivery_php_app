@@ -1,10 +1,12 @@
 <?php
     include("database/db.php");
 
-    if(isset($_GET['delete'])){
-      mysqli_query($conn, "DELETE FROM `add-to-cart`");
-     
-   }
+    if(!empty($_GET['del'])){
+      $del_id=$_GET['del'];
+      if(mysqli_query($connection,"delete from add-to-cart where id=$del_id")){
+          header("location:shopping-cart.php");
+      }
+  }
 ?>
 
 <!DOCTYPE html>
@@ -103,7 +105,7 @@
 
         <input type="number" class="relative block w-full px-3 sm:text-sm py-3 border border-gray-300" placeholder="Enter Quantity" min="1" value="<?php echo $row['quantity']?>">
           <div class="flex sm:justify-end">
-            <button class="btn justify-end">Delete</button>
+            <a href="?del=<?= $row['id'];?>" class="btn justify-end">Delete</a>
             
             <?php
                  $subtotal = number_format($row['price'] * $row['quantity']);
