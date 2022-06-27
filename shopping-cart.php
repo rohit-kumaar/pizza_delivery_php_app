@@ -1,12 +1,12 @@
 <?php
     include("database/db.php");
-
-    if(!empty($_GET['del'])){
-      $del_id=$_GET['del'];
-      if(mysqli_query($connection,"delete from add-to-cart where id=$del_id")){
-          header("location:shopping-cart.php");
-      }
-  }
+    
+    if(isset($_GET['delete'])){
+      $remove_id = $_GET['delete'];
+      mysqli_query($connection, "DELETE FROM `add-to-cart` WHERE id = '$remove_id'");
+      header('location:shopping-cart.php');
+   };
+   
 ?>
 
 <!DOCTYPE html>
@@ -44,7 +44,7 @@
   <header class="z-0 fixed top-0 w-full" style="z-index: 2">
     <div class="container mx-auto px-8">
       <div class="bg-slate-100 flex items-center justify-between h-[15vh] px-4">
-        <a href="index.html">
+        <a href="index.php">
           <img class="w-16 cursor-pointer" loading="lazy" src="src/images/logo.PNG" alt="pizza delivery logo"
             title="Our Brand" />
         </a>
@@ -105,7 +105,7 @@
 
         <input type="number" class="relative block w-full px-3 sm:text-sm py-3 border border-gray-300" placeholder="Enter Quantity" min="1" value="<?php echo $row['quantity']?>">
           <div class="flex sm:justify-end">
-            <a href="?del=<?= $row['id'];?>" class="btn justify-end">Delete</a>
+            <a href="?delete=<?= $row['id'];?>" class="btn justify-end">Delete</a>
             
             <?php
                  $subtotal = number_format($row['price'] * $row['quantity']);
